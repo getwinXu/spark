@@ -14,7 +14,7 @@ def concat_ebd(token_ebd,click_str):
     # 拼接
     inputs = (token_ebd+','+click_str).replace('mask',placeholder)
     assert len(inputs.split(','))%1024 == 0
-    inputs += ','+','.join(['0']*(1024*11-len(inputs.split(','))))
+    inputs += (','+','.join(['0']*(1024*11-len(inputs.split(',')))))
     return inputs
 
 
